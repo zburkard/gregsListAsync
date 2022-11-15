@@ -23,8 +23,8 @@ export class CarsController {
   constructor() {
     appState.on('cars', _drawCars)
     appState.on('activeCar', _drawCarForm)
-    this.getCars()
-    _drawCarForm()
+    // this.getCars()
+    // _drawCarForm()
   }
 
 
@@ -82,6 +82,12 @@ export class CarsController {
       Pop.error(error.message)
       console.error(error)
     }
+  }
+
+  showCars() {
+    _drawCars()
+    this.getCars()
+    _drawCarForm()
   }
 
 }
